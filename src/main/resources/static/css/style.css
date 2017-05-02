@@ -4,3 +4,7 @@ a:link {
 a:visited {
     color: blue;
 }
+
+.allTasks{
+    background-color: black;
+}
