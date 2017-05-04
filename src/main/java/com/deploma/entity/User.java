@@ -21,6 +21,8 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<GroupOfDiseases> groupsOfDiseases;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Rent> rents;
 
     public Integer getId() {
         return id;
@@ -60,5 +62,21 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<GroupOfDiseases> getGroupsOfDiseases() {
+        return groupsOfDiseases;
+    }
+
+    public void setGroupsOfDiseases(List<GroupOfDiseases> groupsOfDiseases) {
+        this.groupsOfDiseases = groupsOfDiseases;
+    }
+
+    public List<Rent> getRents() {
+        return rents;
+    }
+
+    public void setRents(List<Rent> rents) {
+        this.rents = rents;
     }
 }
