@@ -66,4 +66,5 @@ public class GroupOfDiseases {
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
+
 }

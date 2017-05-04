@@ -47,4 +47,28 @@ public class Doctor {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public List<Rent> getRents() {
+        return rents;
+    }
+
+    public void setRents(List<Rent> rents) {
+        this.rents = rents;
+    }
+
+    public List<GroupOfDiseases> getGroupsOfDiseases() {
+        return groupsOfDiseases;
+    }
+
+    public void setGroupsOfDiseases(List<GroupOfDiseases> groupsOfDiseases) {
+        this.groupsOfDiseases = groupsOfDiseases;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
 }

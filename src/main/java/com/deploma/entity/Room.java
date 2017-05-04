@@ -39,4 +39,5 @@ public class Room {
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
+
 }

@@ -79,4 +79,5 @@ public class User {
     public void setRents(List<Rent> rents) {
         this.rents = rents;
     }
+
 }
