@@ -1,6 +1,7 @@
 package com.deploma.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "doctors")
@@ -12,6 +13,16 @@ public class Doctor {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "doctor", cascade = CascadeType.ALL)
+    private List<Rent> rents;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "doctor", cascade = CascadeType.ALL)
+    private List<GroupOfDiseases> groupsOfDiseases;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
+    private Room room;
 
     public Integer getId() {
         return id;

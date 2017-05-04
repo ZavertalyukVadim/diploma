@@ -13,9 +13,16 @@ public class GroupOfDiseases {
     @Column(name = "name")
     private String name;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "groups_of_diseases_users", joinColumns = {
+            @JoinColumn(name = "groups_of_diseases_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "user_id",
+                    nullable = false)})
+    private List<User> users;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "groupsOfDiseases", cascade = CascadeType.ALL)
     private List<Disease> diseases;
@@ -44,11 +51,19 @@ public class GroupOfDiseases {
         this.diseases = diseases;
     }
 
-    public User getUser() {
-        return user;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 }
