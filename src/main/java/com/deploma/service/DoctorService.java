@@ -19,4 +19,8 @@ public class DoctorService {
     public List<Doctor> getAllDoctors(){
         return doctorDao.findAll();
     }
+
+    public Doctor getDoctor(Integer id) {
+        return doctorDao.findOne(id);
+    }
 }
