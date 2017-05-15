@@ -28,7 +28,7 @@ public class DoctorController {
 
     @GetMapping(value = "/{id}")
     String getDoctor(@PathVariable(value = "id") Integer id, ModelMap modelMap) {
-        modelMap.addAttribute("doctors", doctorService.getDoctor(id));
+        modelMap.addAttribute("doctor", doctorService.getDoctor(id));
         return "doctor";
     }
 }
