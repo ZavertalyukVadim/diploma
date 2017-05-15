@@ -19,4 +19,8 @@ public class RentService {
     public List<Rent> getAllRents(){
         return rentDao.findAll();
     }
+
+    public Rent getRent(Integer id) {
+        return rentDao.findOne(id);
+    }
 }
