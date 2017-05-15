@@ -4,9 +4,7 @@ import com.deploma.service.RentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value = "/rent")
@@ -28,5 +26,18 @@ public class RentController {
     String getRent(@PathVariable(value = "id") Integer id,ModelMap modelMap){
         modelMap.addAttribute("rent", rentService.getRent(id));
         return "rent";
+    }
+
+    @PostMapping
+    String addRent(ModelMap modelMap,
+                   @RequestParam("doctor_id") Integer doctor_id){
+        modelMap.addAttribute("rent", rentService.addRent(doctor_id));
+        return "/";
+    }
+
+    @DeleteMapping(value = "/{id}")
+    String deleteRent(@PathVariable(value = "id") Integer id){
+        rentService.deleteRent(id);
+        return "/";
     }
 }
