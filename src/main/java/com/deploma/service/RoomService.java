@@ -20,4 +20,7 @@ public class RoomService {
         return roomDao.findAll();
     }
 
+    public Room getRoom(Integer id) {
+        return roomDao.findOne(id);
+    }
 }

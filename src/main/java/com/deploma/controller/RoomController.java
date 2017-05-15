@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -24,4 +25,9 @@ public class RoomController {
         return "rooms";
     }
 
+    @GetMapping(value = "/{id}")
+    String getRoom(@PathVariable(value = "id") Integer id, ModelMap modelMap){
+        modelMap.addAttribute("room", roomService.getRoom(id));
+        return "room";
+    }
 }
