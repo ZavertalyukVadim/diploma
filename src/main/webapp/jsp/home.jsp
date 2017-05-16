@@ -2,12 +2,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Generic - Editorial by HTML5 UP</title>
+    <title>Deploma</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../resources/assets/css/main.css" />
-    <style>
-
-    </style>
 </head>
 <body>
 <!-- Wrapper -->
@@ -19,7 +16,7 @@
 
             <!-- Header -->
             <header id="header">
-                <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+                <a href="/" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
                 <ul class="icons">
                     <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -29,7 +26,6 @@
                 </ul>
             </header>
 
-            <!-- Content -->
             <section>
                 <header class="main">
                     <h1>Generic</h1>
@@ -64,75 +60,71 @@
         </div>
     </div>
 
-    <!-- Sidebar -->
     <div id="sidebar">
         <div class="inner">
 
-            <!-- Search -->
             <section id="search" class="alt">
                 <form method="post" action="#">
                     <input type="text" name="query" id="query" placeholder="Search" />
                 </form>
             </section>
 
-            <!-- Menu -->
             <nav id="menu">
                 <header class="major">
                     <h2>Menu</h2>
                 </header>
                 <ul>
-                    <li><a href="/">Homepage</a></li>
-                    <li><a href="/">Generic</a></li>
-                    <li><a href="/">Elements</a></li>
-                    <li>
-                        <span class="opener">Submenu</span>
-                        <ul>
-                            <li><a href="#">Lorem Dolor</a></li>
-                            <li><a href="#">Ipsum Adipiscing</a></li>
-                            <li><a href="#">Tempus Magna</a></li>
-                            <li><a href="#">Feugiat Veroeros</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Etiam Dolore</a></li>
-                    <li><a href="#">Adipiscing</a></li>
-                    <li>
-                        <span class="opener">Another Submenu</span>
-                        <ul>
-                            <li><a href="#">Lorem Dolor</a></li>
-                            <li><a href="#">Ipsum Adipiscing</a></li>
-                            <li><a href="#">Tempus Magna</a></li>
-                            <li><a href="#">Feugiat Veroeros</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Maximus Erat</a></li>
-                    <li><a href="#">Sapien Mauris</a></li>
-                    <li><a href="#">Amet Lacinia</a></li>
+                    <li><a href="/">home</a></li>
+                    <li><a href="/doctor">doctors</a></li>
+                    <li><a href="/room">rooms</a></li>
+                    <%--<li>--%>
+                        <%--<span class="opener">Submenu</span>--%>
+                        <%--<ul>--%>
+                            <%--<li><a href="#">Lorem Dolor</a></li>--%>
+                            <%--<li><a href="#">Ipsum Adipiscing</a></li>--%>
+                            <%--<li><a href="#">Tempus Magna</a></li>--%>
+                            <%--<li><a href="#">Feugiat Veroeros</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li><a href="#">Etiam Dolore</a></li>--%>
+                    <%--<li><a href="#">Adipiscing</a></li>--%>
+                    <%--<li>--%>
+                        <%--<span class="opener">Another Submenu</span>--%>
+                        <%--<ul>--%>
+                            <%--<li><a href="#">Lorem Dolor</a></li>--%>
+                            <%--<li><a href="#">Ipsum Adipiscing</a></li>--%>
+                            <%--<li><a href="#">Tempus Magna</a></li>--%>
+                            <%--<li><a href="#">Feugiat Veroeros</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li><a href="#">Maximus Erat</a></li>--%>
+                    <%--<li><a href="#">Sapien Mauris</a></li>--%>
+                    <%--<li><a href="#">Amet Lacinia</a></li>--%>
                 </ul>
             </nav>
 
-            <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Ante interdum</h2>
-                </header>
-                <div class="mini-posts">
-                    <article>
-                        <a href="#" class="image"><img src="../resources/images/pic07.jpg" alt="" /></a>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-                    </article>
-                    <article>
-                        <a href="#" class="image"><img src="../resources/images/pic08.jpg" alt="" /></a>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-                    </article>
-                    <article>
-                        <a href="#" class="image"><img src="../resources/images/pic09.jpg" alt="" /></a>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-                    </article>
-                </div>
-                <ul class="actions">
-                    <li><a href="#" class="button">More</a></li>
-                </ul>
-            </section>
+            <%--<section>--%>
+                <%--<header class="major">--%>
+                    <%--<h2>Ante interdum</h2>--%>
+                <%--</header>--%>
+                <%--<div class="mini-posts">--%>
+                    <%--<article>--%>
+                        <%--<a href="#" class="image"><img src="../resources/images/pic07.jpg" alt="" /></a>--%>
+                        <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
+                    <%--</article>--%>
+                    <%--<article>--%>
+                        <%--<a href="#" class="image"><img src="../resources/images/pic08.jpg" alt="" /></a>--%>
+                        <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
+                    <%--</article>--%>
+                    <%--<article>--%>
+                        <%--<a href="#" class="image"><img src="../resources/images/pic09.jpg" alt="" /></a>--%>
+                        <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
+                    <%--</article>--%>
+                <%--</div>--%>
+                <%--<ul class="actions">--%>
+                    <%--<li><a href="#" class="button">More</a></li>--%>
+                <%--</ul>--%>
+            <%--</section>--%>
 
             <!-- Section -->
             <section>
@@ -158,7 +150,6 @@
 
 </div>
 
-</div>
 
 <!-- Scripts -->
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
