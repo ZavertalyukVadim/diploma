@@ -23,6 +23,7 @@ public class UserController {
         modelMap.addAttribute("users", userService.getAllUsers());
         return "users";
     }
+
     @GetMapping(value = "/{id}")
     String getUser(@PathVariable(value = "id") Integer id, ModelMap modelMap){
         modelMap.addAttribute("user", userService.getUser(id));

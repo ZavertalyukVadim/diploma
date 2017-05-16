@@ -17,6 +17,10 @@ public class DoctorService {
     }
 
     public List<Doctor> getAllDoctors(){
+        Doctor doctor =  new Doctor();
+        doctor.setFirstName("Ivan");
+        doctor.setLastName("Ivanov");
+        doctorDao.save(doctor);
         return doctorDao.findAll();
     }
 

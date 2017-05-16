@@ -17,6 +17,9 @@ public class RoomService {
     }
 
     public List<Room> getAllRooms(){
+        Room room = new Room();
+        room.setNumber(20);
+        roomDao.save(room);
         return roomDao.findAll();
     }
 

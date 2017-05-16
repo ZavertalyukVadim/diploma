@@ -17,6 +17,11 @@ public class UserService {
     }
 
     public List<User> getAllUsers(){
+        User user =  new User();
+        user.setFirstName("Petr");
+        user.setLastName("Petrov");
+        user.setUsername("petryshka");
+        userDao.save(user);
         return userDao.findAll();
     }
 
