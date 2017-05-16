@@ -27,7 +27,7 @@
 
             <section>
                 <header class="main">
-                    <h1>Generic</h1>
+                    <h1>Doctors</h1>
                 </header>
                 <c:forEach items="${doctors}" var="doctor">
                     <p>${doctor.lastName}</p>
