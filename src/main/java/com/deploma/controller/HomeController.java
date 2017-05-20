@@ -12,8 +12,5 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping(value = "/help")
-    public String helpPage(ModelMap modelMap){
-        return "help";
-    }
+
 }

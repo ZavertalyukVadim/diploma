@@ -5,6 +5,9 @@
     <title>Deploma</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../resources/assets/css/main.css" />
+    <link rel="stylesheet" href="../resources/assets/css/ie9.css" />
+    <link rel="stylesheet" href="../resources/assets/css/ie8.css" />
+    <link rel="stylesheet" href="../resources/assets/css/font-awesome.min.css" />
 </head>
 <body>
 <!-- Wrapper -->

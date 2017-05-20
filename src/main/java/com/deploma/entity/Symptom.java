@@ -27,4 +27,30 @@ public class Symptom {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Symptom{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Symptom symptom = (Symptom) o;
+
+        if (id != null ? !id.equals(symptom.id) : symptom.id != null) return false;
+        return name != null ? name.equals(symptom.name) : symptom.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
+    }
 }

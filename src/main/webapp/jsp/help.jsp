@@ -1,7 +1,13 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE HTML>
 <html>
 <head>
     <link rel="stylesheet" href="../resources/assets/css/main.css"/>
+
+    <meta charset="utf-8" />
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
     <title>User</title>
 </head>
 <body>
@@ -25,21 +31,59 @@
 
             <section>
                 <header class="main">
-                    <h1>Rents</h1>
+                    <h1>Help</h1>
                 </header>
-                <p>${rent.date}</p>
+                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
+                    venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor
+                    sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu
+                    massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+                    Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis,
+                    hendrerit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent
+                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
+                    libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
+                    ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor.
+                    Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
+                    Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet
+                    dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque
+                    leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum
+                    convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
+                <%--<form method="post" action="input5.php">--%>
+                    <%--<p><b>С какими операционными системами вы знакомы?</b></p>--%>
+                    <%--<p><label>--%>
+                        <%--<input type="checkbox" name="option1" value="a1" checked>--%>
+                    <%--</label>Windows 95/98<Br>--%>
+                        <%--<label>--%>
+                            <%--<input type="checkbox" name="option2" value="a2">--%>
+                            <%--Windows 2000--%>
+                        <%--</label><Br>--%>
+                        <%--<input type="checkbox" name="option3" value="a3">System X<Br>--%>
+                        <%--<input type="checkbox" name="option4" value="a4">Linux<Br>--%>
+                        <%--<input type="checkbox" name="option5" value="a5">X3-DOS</p>--%>
+                    <%--<p><input type="submit" value="Отправить"></p>--%>
+                <%--</form>--%>
             </section>
+
+            <section id="search" class="alt">
+                <form method="post" action="/search">
+                    <input type="text" name="query" id="query" placeholder="Search"/>
+                </form>
+            </section>
+
         </div>
     </div>
 
     <div id="sidebar">
         <div class="inner">
 
-            <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="Search"/>
-                </form>
-            </section>
+            <%--<section id="search" class="alt">--%>
+                <%--<form method="post" action="#">--%>
+                    <%--<input type="text" name="query" id="query" placeholder="Search"/>--%>
+                <%--</form>--%>
+            <%--</section>--%>
 
             <nav id="menu">
                 <header class="major">
@@ -77,7 +121,8 @@
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../resources/assets/js/ie/respond.min.js"></script>
+<![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 </body>
 </html>
