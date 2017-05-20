@@ -33,7 +33,7 @@ public class DiseaseService {
             System.out.println(symptomList);
         }
         System.out.println(diseaseDao.getDiseasesBySymptoms(symptomList));
-        return diseaseDao.getDiseaseBySymptomsAndSymptoms(symptomList);
+        return diseaseDao.getDiseaseBySymptoms(symptomList);
     }
 
     public void test() {
