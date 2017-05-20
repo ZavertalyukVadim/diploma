@@ -25,9 +25,9 @@
 
             <section>
                 <header class="main">
-                    <h1>Rooms</h1>
+                    <h1>Rents</h1>
                 </header>
-                    <p>${room.number}</p>
+                <p>${rent.date}</p>
             </section>
         </div>
     </div>

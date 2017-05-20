@@ -64,7 +64,7 @@
         <div class="inner">
 
             <section id="search" class="alt">
-                <form method="post" action="#">
+                <form method="post" action="/search">
                     <input type="text" name="query" id="query" placeholder="Search" />
                 </form>
             </section>
@@ -77,6 +77,7 @@
                     <li><a href="/">home</a></li>
                     <li><a href="/doctor">doctors</a></li>
                     <li><a href="/room">rooms</a></li>
+                    <li><a href="/help">helps</a></li>
                     <%--<li>--%>
                         <%--<span class="opener">Submenu</span>--%>
                         <%--<ul>--%>
