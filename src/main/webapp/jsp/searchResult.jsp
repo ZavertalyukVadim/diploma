@@ -27,11 +27,11 @@
 
             <section>
                 <header class="main">
-                    <h1>Doctors</h1>
+                    <h1>Search Result</h1>
                 </header>
-
+                <c:forEach items="${diseases}" var="disease">
                     <p>${disease.name}</p>
-
+                </c:forEach>
             </section>
         </div>
     </div>
@@ -82,7 +82,8 @@
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../resources/assets/js/ie/respond.min.js"></script>
+<![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 </body>
 </html>

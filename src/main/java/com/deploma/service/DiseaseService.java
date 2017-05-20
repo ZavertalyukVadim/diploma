@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -23,17 +24,15 @@ public class DiseaseService {
         this.symptomDao = symptomDao;
     }
 
-    public Disease search(String symptoms) {
-        System.out.println(diseaseDao.findAll());
-        String[] test = symptoms.trim().split("\\p{P}?[ \\t\\n\\r]+");
-        Set<Symptom> symptomList = new HashSet<>();
+    public List<Disease> search(String symp) {
+        String[] test = symp.trim().split("\\p{P}?[ \\t\\n\\r]+");
+        Set<Symptom> symptoms = new HashSet<>();
         for (String s : test) {
             Symptom symptom = symptomDao.getSymptomByName(s.trim());
-            symptomList.add(symptom);
-            System.out.println(symptomList);
+            symptoms.add(symptom);
         }
-        System.out.println(diseaseDao.getDiseasesBySymptoms(symptomList));
-        return diseaseDao.getDiseaseBySymptoms(symptomList);
+        System.out.println(diseaseDao.findBySymptomsLike(symptoms));
+        return diseaseDao.findBySymptomsLike(symptoms);
     }
 
     public void test() {
@@ -54,5 +53,12 @@ public class DiseaseService {
         disease.setSymptoms(symptomList);
         disease.setName("disease");
         diseaseDao.save(disease);
+        Disease disease1 =  new Disease();
+        disease1.setName("disease1");
+        Set<Symptom> symptomList1 = new HashSet<>();
+        symptomList1.add(symptom);
+        symptomList1.add(symptom1);
+        disease1.setSymptoms(symptomList1);
+        diseaseDao.save(disease1);
     }
 }

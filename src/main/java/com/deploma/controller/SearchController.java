@@ -23,7 +23,7 @@ public class SearchController {
     @PostMapping(value = "/search")
     public String search(@RequestParam("query") String symptoms
             , ModelMap modelMap) {
-        modelMap.addAttribute("disease", diseaseService.search(symptoms));
+        modelMap.addAttribute("diseases", diseaseService.search(symptoms));
         return "searchResult";
     }
 
