@@ -31,7 +31,7 @@
                 <p>First Name: ${doctor.firstName}<br></p>
                 <p>Last Name: ${doctor.lastName}<br></p>
                 <c:forEach items="${doctor.groupsOfDiseases}" var="groupsOfDisease">
-                <p>Groups Of Disease: ${groupsOfDisease.name}<br></p>
+                    <p>Groups Of Disease: ${groupsOfDisease.name}<br></p>
                 </c:forEach>
                 <p>Room number: ${doctor.room.number}<br></p>
                 <h4>Rents</h4>
@@ -54,6 +54,13 @@
                         </c:forEach>
                         </tbody>
                     </table>
+                    <ul class="actions small">
+                        <form action="/rent" method="post">
+                            <input type="hidden" name="doctor_id" value="${doctor.id}">
+                            <input type="time" name="date" value="10:15" min="08:00" max="17:00">
+                            <button type="submit" class="button small">Add rent</button>
+                        </form>
+                    </ul>
                 </div>
             </section>
         </div>

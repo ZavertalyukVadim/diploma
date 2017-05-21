@@ -7,7 +7,6 @@ import com.deploma.entity.Rent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,11 +28,11 @@ public class RentService {
         return rentDao.findOne(id);
     }
 
-    public Rent addRent(Integer doctor_id) {
+    public Rent addRent(Integer doctor_id,String date) {
         Rent rent =  new Rent();
         Doctor doctor = doctorDao.findOne(doctor_id);
         rent.setDoctor(doctor);
-        rent.setDate(new Date());
+        rent.setDate(date);
         return rentDao.save(rent);
     }
 

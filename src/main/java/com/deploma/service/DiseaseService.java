@@ -47,7 +47,7 @@ public class DiseaseService {
         user.setLastName("lastname");
         userDao.save(user);
         Rent rent = new Rent();
-        rent.setDate(new Date());
+        rent.setDate(new Date().toString());
         Room room = new Room();
         room.setNumber(1);
         roomDao.save(room);

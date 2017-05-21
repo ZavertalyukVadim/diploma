@@ -30,9 +30,10 @@ public class RentController {
 
     @PostMapping
     String addRent(ModelMap modelMap,
-                   @RequestParam("doctor_id") Integer doctor_id){
-        modelMap.addAttribute("rent", rentService.addRent(doctor_id));
-        return "/";
+                   @RequestParam("doctor_id") Integer doctor_id,
+                   @RequestParam("date") String date){
+        modelMap.addAttribute("rent", rentService.addRent(doctor_id,date));
+        return "redirect:/doctor/"+doctor_id;
     }
 
     @DeleteMapping(value = "/{id}")

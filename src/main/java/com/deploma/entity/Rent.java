@@ -1,7 +1,6 @@
 package com.deploma.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "rents")
@@ -19,7 +18,7 @@ public class Rent {
     private Doctor doctor;
 
     @Column(name = "date")
-    private Date date;
+    private String date;
 
     public Integer getId() {
         return id;
@@ -37,11 +36,11 @@ public class Rent {
         this.doctor = doctor;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
