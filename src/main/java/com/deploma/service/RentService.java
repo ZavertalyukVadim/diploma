@@ -33,7 +33,7 @@ public class RentService {
         List<Rent> rents = rentDao.findAll();
         for (Rent rent1:rents){
             if (rent1.getDate().contains(date))
-                System.out.println(date);
+                return null;
         }
         Doctor doctor = doctorDao.findOne(doctor_id);
         rent.setDoctor(doctor);
