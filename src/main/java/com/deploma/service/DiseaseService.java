@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @Transactional
@@ -18,14 +16,18 @@ public class DiseaseService {
     private final DoctorDao doctorDao;
     private final GroupOfDiseasesDao groupOfDiseasesDao;
     private final RoomDao roomDao;
+    private final UserDao userDao;
+    private final RentDao rentDao;
 
     @Autowired
-    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao, RoomDao roomDao) {
+    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao, RoomDao roomDao, UserDao userDao, RentDao rentDao) {
         this.diseaseDao = diseaseDao;
         this.symptomDao = symptomDao;
         this.doctorDao = doctorDao;
         this.groupOfDiseasesDao = groupOfDiseasesDao;
         this.roomDao = roomDao;
+        this.userDao = userDao;
+        this.rentDao = rentDao;
     }
 
     public Set<Disease> search(String symp) {
@@ -39,6 +41,13 @@ public class DiseaseService {
     }
 
     public void test() {
+        List<Rent> rents = new ArrayList<>();
+        User user = new User();
+        user.setUsername("username");
+        user.setLastName("lastname");
+        userDao.save(user);
+        Rent rent = new Rent();
+        rent.setDate(new Date());
         Room room = new Room();
         room.setNumber(1);
         roomDao.save(room);
@@ -47,6 +56,12 @@ public class DiseaseService {
         doctor.setFirstName("first name");
         doctor.setRoom(room);
         doctorDao.save(doctor);
+        rent.setDoctor(doctor);
+        rent.setUser(user);
+        rentDao.save(rent);
+        rents.add(rent);
+        user.setRents(rents);
+        userDao.save(user);
         GroupOfDiseases groupOfDiseases = new GroupOfDiseases();
         groupOfDiseases.setName("groupOfDiseases");
         groupOfDiseases.setDoctor(doctor);

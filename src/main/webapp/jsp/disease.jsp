@@ -36,10 +36,13 @@
                 <c:forEach items="${disease.symptoms}" var="symptom">
                     <li>${symptom.name}</li>
                 </c:forEach>
-                <h3>Doctor</h3>
-                First Name: ${disease.groupsOfDiseases.doctor.firstName}<br>
-                Last Name: ${disease.groupsOfDiseases.doctor.lastName}<br>
-                Room: ${disease.groupsOfDiseases.doctor.room.number}<br>
+                <br>
+                <header class="major">
+                    <a href="/doctor/${disease.groupsOfDiseases.doctor.id}"><h3>Doctor</h3></a>
+                </header>
+                <p>First Name: ${disease.groupsOfDiseases.doctor.firstName}<br></p>
+                <p>Last Name: ${disease.groupsOfDiseases.doctor.lastName}<br></p>
+                <p>Room: ${disease.groupsOfDiseases.doctor.room.number}<br></p>
             </section>
         </div>
     </div>

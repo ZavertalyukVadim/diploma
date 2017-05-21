@@ -28,9 +28,33 @@
                 <header class="main">
                     <h1>Doctors</h1>
                 </header>
-
-                    <p>${doctor.lastName}</p>
-
+                <p>First Name: ${doctor.firstName}<br></p>
+                <p>Last Name: ${doctor.lastName}<br></p>
+                <c:forEach items="${doctor.groupsOfDiseases}" var="groupsOfDisease">
+                <p>Groups Of Disease: ${groupsOfDisease.name}<br></p>
+                </c:forEach>
+                <p>Room number: ${doctor.room.number}<br></p>
+                <h4>Rents</h4>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Pacient</th>
+                            <th>Doctor</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${doctor.rents}" var="rent">
+                            <tr>
+                                <td>${rent.date}</td>
+                                <td>${rent.user.lastName}</td>
+                                <td>${rent.doctor.firstName}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </div>
@@ -81,7 +105,8 @@
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../resources/assets/js/ie/respond.min.js"></script>
+<![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 </body>
 </html>
