@@ -1,13 +1,7 @@
 package com.deploma.service;
 
-import com.deploma.dao.DiseaseDao;
-import com.deploma.dao.DoctorDao;
-import com.deploma.dao.GroupOfDiseasesDao;
-import com.deploma.dao.SymptomDao;
-import com.deploma.entity.Disease;
-import com.deploma.entity.Doctor;
-import com.deploma.entity.GroupOfDiseases;
-import com.deploma.entity.Symptom;
+import com.deploma.dao.*;
+import com.deploma.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,13 +17,15 @@ public class DiseaseService {
     private final SymptomDao symptomDao;
     private final DoctorDao doctorDao;
     private final GroupOfDiseasesDao groupOfDiseasesDao;
+    private final RoomDao roomDao;
 
     @Autowired
-    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao) {
+    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao, RoomDao roomDao) {
         this.diseaseDao = diseaseDao;
         this.symptomDao = symptomDao;
         this.doctorDao = doctorDao;
         this.groupOfDiseasesDao = groupOfDiseasesDao;
+        this.roomDao = roomDao;
     }
 
     public Set<Disease> search(String symp) {
@@ -43,9 +39,13 @@ public class DiseaseService {
     }
 
     public void test() {
+        Room room = new Room();
+        room.setNumber(1);
+        roomDao.save(room);
         Doctor doctor =  new Doctor();
         doctor.setLastName("last name");
         doctor.setFirstName("first name");
+        doctor.setRoom(room);
         doctorDao.save(doctor);
         GroupOfDiseases groupOfDiseases = new GroupOfDiseases();
         groupOfDiseases.setName("groupOfDiseases");

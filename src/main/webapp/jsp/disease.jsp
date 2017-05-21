@@ -37,7 +37,9 @@
                     <li>${symptom.name}</li>
                 </c:forEach>
                 <h3>Doctor</h3>
-                ${disease.groupsOfDiseases.doctor.firstName}
+                First Name: ${disease.groupsOfDiseases.doctor.firstName}<br>
+                Last Name: ${disease.groupsOfDiseases.doctor.lastName}<br>
+                Room: ${disease.groupsOfDiseases.doctor.room.number}<br>
             </section>
         </div>
     </div>
