@@ -28,8 +28,8 @@
                 <header class="main">
                     <h1>Doctors</h1>
                 </header>
-                <c:forEach items="${doctors}" var="doctor">
-                    <p>${doctor.lastName}</p>
+                <c:forEach items="${diseases}" var="disease">
+                    <p>${disease.name}</p>
                 </c:forEach>
 
 
