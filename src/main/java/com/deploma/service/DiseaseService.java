@@ -25,14 +25,14 @@ public class DiseaseService {
     }
 
     public List<Disease> search(String symp) {
-        String[] test = symp.trim().split("\\p{P}?[ \\t\\n\\r]+");
+        String[] symptomsStrings = symp.trim().split("\\p{P}?[ \\t\\n\\r]+");
         Set<Symptom> symptoms = new HashSet<>();
-        for (String s : test) {
-            Symptom symptom = symptomDao.getSymptomByName(s.trim());
+        for (String s : symptomsStrings) {
+            Symptom symptom = symptomDao.getSymptomByName(s);
             symptoms.add(symptom);
         }
-        System.out.println(diseaseDao.findBySymptomsLike(symptoms));
-        return diseaseDao.findBySymptomsLike(symptoms);
+        System.out.println(symptoms);
+        return diseaseDao.findBySymptomsIn(symptoms);
     }
 
     public void test() {
