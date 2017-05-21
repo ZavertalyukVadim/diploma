@@ -1,10 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <link rel="stylesheet" href="<c:url value="/src/main/resources/static/css/style.css"/>">
-    <meta charset="utf-8"/>
     <link rel="stylesheet" href="../resources/assets/css/main.css"/>
-    <title>Search Result</title>
+    <title>User</title>
 </head>
 <body>
 <div id="wrapper">
@@ -27,17 +25,9 @@
 
             <section>
                 <header class="main">
-                    <h1>Search Result</h1>
+                    <h1>Symptom</h1>
                 </header>
-                <c:forEach items="${diseases}" var="disease">
-                    <header class="major">
-                        <a href="#"><h2>${disease.name}</h2></a>
-                    </header>
-                    <c:forEach items="${disease.symptoms}" var="symptom">
-                        <li>${symptom.name}</li>
-                    </c:forEach>
-                    <hr class="major"/>
-                </c:forEach>
+                <p>${symptom.name}</p>
             </section>
         </div>
     </div>
@@ -84,12 +74,10 @@
         </div>
     </div>
 </div>
-<!-- Scripts -->
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<script src="../resources/assets/js/ie/respond.min.js"></script>
-<![endif]-->
+<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 </body>
 </html>
