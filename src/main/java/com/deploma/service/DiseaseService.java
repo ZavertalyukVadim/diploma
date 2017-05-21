@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -65,5 +66,13 @@ public class DiseaseService {
         symptomList2.add(symptom1);
         disease2.setSymptoms(symptomList2);
         diseaseDao.save(disease2);
+    }
+
+    public List<Disease> getAllDiseases() {
+        return diseaseDao.findAll();
+    }
+
+    public Disease getDisease(Integer id) {
+        return diseaseDao.findOne(id);
     }
 }
