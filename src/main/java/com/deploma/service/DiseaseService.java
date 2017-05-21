@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Service
@@ -24,15 +23,14 @@ public class DiseaseService {
         this.symptomDao = symptomDao;
     }
 
-    public List<Disease> search(String symp) {
+    public Set<Disease> search(String symp) {
         String[] symptomsStrings = symp.trim().split("\\p{P}?[ \\t\\n\\r]+");
         Set<Symptom> symptoms = new HashSet<>();
         for (String s : symptomsStrings) {
             Symptom symptom = symptomDao.getSymptomByName(s);
             symptoms.add(symptom);
         }
-        System.out.println(symptoms);
-        return diseaseDao.findBySymptomsIn(symptoms);
+        return diseaseDao.findBySymptomsIsIn(symptoms);
     }
 
     public void test() {
@@ -60,5 +58,12 @@ public class DiseaseService {
         symptomList1.add(symptom1);
         disease1.setSymptoms(symptomList1);
         diseaseDao.save(disease1);
+        Disease disease2 =  new Disease();
+        disease2.setName("disease2");
+        Set<Symptom> symptomList2 = new HashSet<>();
+        symptomList2.add(symptom);
+        symptomList2.add(symptom1);
+        disease2.setSymptoms(symptomList2);
+        diseaseDao.save(disease2);
     }
 }

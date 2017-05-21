@@ -18,10 +18,10 @@ public class Disease {
     @JoinColumn(name = "groupsOfDiseases_id")
     private GroupOfDiseases groupsOfDiseases;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "diseases_symptoms", joinColumns = {
-            @JoinColumn(name = "diseases_id", nullable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "symptoms_id",
+            @JoinColumn(name = "disease_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "symptom_id",
                     nullable = false)})
     private Set<Symptom> symptoms =  new HashSet<>();
 
