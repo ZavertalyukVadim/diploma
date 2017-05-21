@@ -57,7 +57,7 @@
                     <ul class="actions small">
                         <form action="/rent" method="post">
                             <input type="hidden" name="doctor_id" value="${doctor.id}">
-                            <input type="time" name="date" value="10:15" min="08:00" max="17:00">
+                            <input type="time" name="date" value="10:00" min="08:00" max="17:00" step="1800">
                             <button type="submit" class="button small">Add rent</button>
                         </form>
                     </ul>

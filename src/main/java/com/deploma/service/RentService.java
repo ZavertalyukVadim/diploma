@@ -30,6 +30,11 @@ public class RentService {
 
     public Rent addRent(Integer doctor_id,String date) {
         Rent rent =  new Rent();
+        List<Rent> rents = rentDao.findAll();
+        for (Rent rent1:rents){
+            if (rent1.getDate().contains(date))
+                System.out.println(date);
+        }
         Doctor doctor = doctorDao.findOne(doctor_id);
         rent.setDoctor(doctor);
         rent.setDate(date);
