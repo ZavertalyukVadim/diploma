@@ -1,8 +1,12 @@
 package com.deploma.service;
 
 import com.deploma.dao.DiseaseDao;
+import com.deploma.dao.DoctorDao;
+import com.deploma.dao.GroupOfDiseasesDao;
 import com.deploma.dao.SymptomDao;
 import com.deploma.entity.Disease;
+import com.deploma.entity.Doctor;
+import com.deploma.entity.GroupOfDiseases;
 import com.deploma.entity.Symptom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +21,15 @@ import java.util.Set;
 public class DiseaseService {
     private final DiseaseDao diseaseDao;
     private final SymptomDao symptomDao;
+    private final DoctorDao doctorDao;
+    private final GroupOfDiseasesDao groupOfDiseasesDao;
 
     @Autowired
-    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao) {
+    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao) {
         this.diseaseDao = diseaseDao;
         this.symptomDao = symptomDao;
+        this.doctorDao = doctorDao;
+        this.groupOfDiseasesDao = groupOfDiseasesDao;
     }
 
     public Set<Disease> search(String symp) {
@@ -35,6 +43,14 @@ public class DiseaseService {
     }
 
     public void test() {
+        Doctor doctor =  new Doctor();
+        doctor.setLastName("last name");
+        doctor.setFirstName("first name");
+        doctorDao.save(doctor);
+        GroupOfDiseases groupOfDiseases = new GroupOfDiseases();
+        groupOfDiseases.setName("groupOfDiseases");
+        groupOfDiseases.setDoctor(doctor);
+        groupOfDiseasesDao.save(groupOfDiseases);
         Symptom symptom = new Symptom();
         symptom.setName("mom");
         symptomDao.save(symptom);
@@ -45,6 +61,8 @@ public class DiseaseService {
         symptom2.setName("qwerty");
         symptomDao.save(symptom2);
         Disease disease = new Disease();
+        disease.setGroupsOfDiseases(groupOfDiseases);
+        disease.setDescription("Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.");
         Set<Symptom> symptomList = new HashSet<>();
         symptomList.add(symptom);
         symptomList.add(symptom1);

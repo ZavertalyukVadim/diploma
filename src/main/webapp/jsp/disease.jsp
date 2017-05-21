@@ -26,11 +26,18 @@
 
             <section>
                 <header class="main">
-                    <h1>Doctors</h1>
+                    <h1>${disease.name}</h1>
                 </header>
-
-                <p>${disease.name}</p>
-
+                <h3>Group Of Diseases</h3>
+                <h4>${disease.groupsOfDiseases.name}</h4>
+                <h3>Description</h3>
+                <blockquote>${disease.description}</blockquote>
+                <h3>Symptoms</h3>
+                <c:forEach items="${disease.symptoms}" var="symptom">
+                    <li>${symptom.name}</li>
+                </c:forEach>
+                <h3>Doctor</h3>
+                ${disease.groupsOfDiseases.doctor.firstName}
             </section>
         </div>
     </div>

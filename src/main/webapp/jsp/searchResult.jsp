@@ -31,7 +31,7 @@
                 </header>
                 <c:forEach items="${diseases}" var="disease">
                     <header class="major">
-                        <a href="#"><h2>${disease.name}</h2></a>
+                        <a href="/disease/${disease.id}"><h2>${disease.name}</h2></a>
                     </header>
                     <c:forEach items="${disease.symptoms}" var="symptom">
                         <li>${symptom.name}</li>
