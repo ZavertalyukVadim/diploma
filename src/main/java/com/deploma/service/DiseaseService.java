@@ -18,9 +18,10 @@ public class DiseaseService {
     private final RoomDao roomDao;
     private final UserDao userDao;
     private final RentDao rentDao;
+    private final RoleDao roleDao;
 
     @Autowired
-    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao, RoomDao roomDao, UserDao userDao, RentDao rentDao) {
+    public DiseaseService(DiseaseDao diseaseDao, SymptomDao symptomDao, DoctorDao doctorDao, GroupOfDiseasesDao groupOfDiseasesDao, RoomDao roomDao, UserDao userDao, RentDao rentDao, RoleDao roleDao) {
         this.diseaseDao = diseaseDao;
         this.symptomDao = symptomDao;
         this.doctorDao = doctorDao;
@@ -28,6 +29,7 @@ public class DiseaseService {
         this.roomDao = roomDao;
         this.userDao = userDao;
         this.rentDao = rentDao;
+        this.roleDao = roleDao;
     }
 
     public Set<Disease> search(String symp) {
@@ -41,10 +43,18 @@ public class DiseaseService {
     }
 
     public void test() {
+        List<Role> roles =  new ArrayList<>();
+        Role role = new Role();
+        role.setType("USER");
+        roleDao.save(role);
+        roles.add(role);
         List<Rent> rents = new ArrayList<>();
         User user = new User();
         user.setUsername("username");
         user.setLastName("lastname");
+        user.setRoles(roles);
+        user.setPassword("qwerty");
+        user.setFirstName("First Name");
         userDao.save(user);
         Rent rent = new Rent();
         rent.setDate(new Date().toString());

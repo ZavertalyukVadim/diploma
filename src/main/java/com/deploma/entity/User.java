@@ -24,6 +24,9 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Rent> rents;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Role> roles;
+
     public Integer getId() {
         return id;
     }
@@ -80,4 +83,11 @@ public class User {
         this.rents = rents;
     }
 
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 }
