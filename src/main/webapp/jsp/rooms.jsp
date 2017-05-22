@@ -17,11 +17,15 @@
             <header id="header">
                 <a href="/" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
                 <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+                    <c:if test="${role}">
+
+                        <li><a href="/logout" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    </c:if>
+                    <c:if test="${!role}">
+                        <li><a href="/login" class="icon fa-facebook"><span class="label">Sing in</span></a></li>
+                        <li><a href="/registration" class="icon fa-snapchat-ghost"><span class="label">Sing up</span></a></li>
+
+                    </c:if>
                 </ul>
             </header>
 
