@@ -16,6 +16,7 @@ public class UserService {
         this.userDao = userDao;
     }
 
+
     public List<User> getAllUsers(){
         User user =  new User();
         user.setFirstName("Petr");
@@ -34,6 +35,7 @@ public class UserService {
     }
 
     public void createUser(User user) {
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userDao.save(user);
     }
 }

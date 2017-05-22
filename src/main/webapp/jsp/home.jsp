@@ -3,11 +3,11 @@
 <html>
 <head>
     <title>Deploma</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../resources/assets/css/main.css" />
-    <link rel="stylesheet" href="../resources/assets/css/ie9.css" />
-    <link rel="stylesheet" href="../resources/assets/css/ie8.css" />
-    <link rel="stylesheet" href="../resources/assets/css/font-awesome.min.css" />
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../resources/assets/css/main.css"/>
+    <link rel="stylesheet" href="../resources/assets/css/ie9.css"/>
+    <link rel="stylesheet" href="../resources/assets/css/ie8.css"/>
+    <link rel="stylesheet" href="../resources/assets/css/font-awesome.min.css"/>
 </head>
 <body>
 <!-- Wrapper -->
@@ -21,11 +21,15 @@
             <header id="header">
                 <a href="/" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
                 <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+                    <c:if test="${role}">
+
+                        <li><a href="/logout" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    </c:if>
+                    <c:if test="${!role}">
+                        <li><a href="/login" class="icon fa-facebook"><span class="label">Sing in</span></a></li>
+                        <li><a href="/registration" class="icon fa-snapchat-ghost"><span class="label">Sing up</span></a></li>
+
+                    </c:if>
                 </ul>
             </header>
 
@@ -34,29 +38,78 @@
                     <h1>Generic</h1>
                 </header>
 
-                <span class="image main"><img src="../resources/images/pic11.jpg" alt="" /></span>
+                <span class="image main"><img src="../resources/images/pic11.jpg" alt=""/></span>
 
-                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
+                    venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor
+                    sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu
+                    massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+                    Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis,
+                    hendrerit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent
+                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
+                    libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
+                    ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor.
+                    Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
+                    Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet
+                    dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque
+                    leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum
+                    convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 
-                <hr class="major" />
+                <hr class="major"/>
 
                 <h2>Interdum sed dapibus</h2>
-                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
+                    venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor
+                    sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu
+                    massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+                    Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis,
+                    hendrerit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent
+                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
+                    libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
+                    ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor.
+                    Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
+                    Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum
+                    primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum
+                    sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit
+                    amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis,
+                    hendrerit tristique lorem ipsum dolor.</p>
 
-                <hr class="major" />
+                <hr class="major"/>
 
                 <h2>Magna etiam veroeros</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent
+                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
+                    libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
+                    ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor.
+                    Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
+                    Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet
+                    dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque
+                    leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum
+                    convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 
-                <hr class="major" />
+                <hr class="major"/>
 
                 <h2>Lorem aliquam bibendum</h2>
-                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
+                    venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor
+                    sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu
+                    massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+                    Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis,
+                    hendrerit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent
+                    taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
+                    libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut
+                    ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor.
+                    Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
+                    Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 
             </section>
 
@@ -68,7 +121,7 @@
 
             <section id="search" class="alt">
                 <form method="post" action="/search">
-                    <input type="text" name="query" id="query" placeholder="Search" />
+                    <input type="text" name="query" id="query" placeholder="Search"/>
                 </form>
             </section>
 
@@ -81,24 +134,24 @@
                     <li><a href="/doctor">doctors</a></li>
                     <li><a href="/help">helps</a></li>
                     <%--<li>--%>
-                        <%--<span class="opener">Submenu</span>--%>
-                        <%--<ul>--%>
-                            <%--<li><a href="#">Lorem Dolor</a></li>--%>
-                            <%--<li><a href="#">Ipsum Adipiscing</a></li>--%>
-                            <%--<li><a href="#">Tempus Magna</a></li>--%>
-                            <%--<li><a href="#">Feugiat Veroeros</a></li>--%>
-                        <%--</ul>--%>
+                    <%--<span class="opener">Submenu</span>--%>
+                    <%--<ul>--%>
+                    <%--<li><a href="#">Lorem Dolor</a></li>--%>
+                    <%--<li><a href="#">Ipsum Adipiscing</a></li>--%>
+                    <%--<li><a href="#">Tempus Magna</a></li>--%>
+                    <%--<li><a href="#">Feugiat Veroeros</a></li>--%>
+                    <%--</ul>--%>
                     <%--</li>--%>
                     <%--<li><a href="#">Etiam Dolore</a></li>--%>
                     <%--<li><a href="#">Adipiscing</a></li>--%>
                     <%--<li>--%>
-                        <%--<span class="opener">Another Submenu</span>--%>
-                        <%--<ul>--%>
-                            <%--<li><a href="#">Lorem Dolor</a></li>--%>
-                            <%--<li><a href="#">Ipsum Adipiscing</a></li>--%>
-                            <%--<li><a href="#">Tempus Magna</a></li>--%>
-                            <%--<li><a href="#">Feugiat Veroeros</a></li>--%>
-                        <%--</ul>--%>
+                    <%--<span class="opener">Another Submenu</span>--%>
+                    <%--<ul>--%>
+                    <%--<li><a href="#">Lorem Dolor</a></li>--%>
+                    <%--<li><a href="#">Ipsum Adipiscing</a></li>--%>
+                    <%--<li><a href="#">Tempus Magna</a></li>--%>
+                    <%--<li><a href="#">Feugiat Veroeros</a></li>--%>
+                    <%--</ul>--%>
                     <%--</li>--%>
                     <%--<li><a href="#">Maximus Erat</a></li>--%>
                     <%--<li><a href="#">Sapien Mauris</a></li>--%>
@@ -107,26 +160,26 @@
             </nav>
 
             <%--<section>--%>
-                <%--<header class="major">--%>
-                    <%--<h2>Ante interdum</h2>--%>
-                <%--</header>--%>
-                <%--<div class="mini-posts">--%>
-                    <%--<article>--%>
-                        <%--<a href="#" class="image"><img src="../resources/images/pic07.jpg" alt="" /></a>--%>
-                        <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
-                    <%--</article>--%>
-                    <%--<article>--%>
-                        <%--<a href="#" class="image"><img src="../resources/images/pic08.jpg" alt="" /></a>--%>
-                        <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
-                    <%--</article>--%>
-                    <%--<article>--%>
-                        <%--<a href="#" class="image"><img src="../resources/images/pic09.jpg" alt="" /></a>--%>
-                        <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
-                    <%--</article>--%>
-                <%--</div>--%>
-                <%--<ul class="actions">--%>
-                    <%--<li><a href="#" class="button">More</a></li>--%>
-                <%--</ul>--%>
+            <%--<header class="major">--%>
+            <%--<h2>Ante interdum</h2>--%>
+            <%--</header>--%>
+            <%--<div class="mini-posts">--%>
+            <%--<article>--%>
+            <%--<a href="#" class="image"><img src="../resources/images/pic07.jpg" alt="" /></a>--%>
+            <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
+            <%--</article>--%>
+            <%--<article>--%>
+            <%--<a href="#" class="image"><img src="../resources/images/pic08.jpg" alt="" /></a>--%>
+            <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
+            <%--</article>--%>
+            <%--<article>--%>
+            <%--<a href="#" class="image"><img src="../resources/images/pic09.jpg" alt="" /></a>--%>
+            <%--<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>--%>
+            <%--</article>--%>
+            <%--</div>--%>
+            <%--<ul class="actions">--%>
+            <%--<li><a href="#" class="button">More</a></li>--%>
+            <%--</ul>--%>
             <%--</section>--%>
 
             <!-- Section -->
@@ -134,18 +187,22 @@
                 <header class="major">
                     <h2>Get in touch</h2>
                 </header>
-                <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+                    ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus
+                    aliquam.</p>
                 <ul class="contact">
                     <li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
                     <li class="fa-phone">(000) 000-0000</li>
-                    <li class="fa-home">1234 Somewhere Road #8254<br />
-                        Nashville, TN 00000-0000</li>
+                    <li class="fa-home">1234 Somewhere Road #8254<br/>
+                        Nashville, TN 00000-0000
+                    </li>
                 </ul>
             </section>
 
             <!-- Footer -->
             <footer id="footer">
-                <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>.
+                    Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
             </footer>
 
         </div>
@@ -158,7 +215,8 @@
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<!--[if lte IE 8]><script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
+<!--[if lte IE 8]>
+<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 
 </body>

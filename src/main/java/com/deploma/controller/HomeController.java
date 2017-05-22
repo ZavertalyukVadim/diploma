@@ -18,6 +18,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.util.Objects;
 
 @Controller
 public class HomeController {
@@ -30,6 +31,10 @@ public class HomeController {
 
     @GetMapping(value = "/")
     public String homePage(ModelMap modelMap){
+        Boolean role;
+        Object auth = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        role = !Objects.equals(auth.toString(), "anonymousUser");
+        modelMap.addAttribute("role", role);
         return "home";
     }
 
