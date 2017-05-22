@@ -79,7 +79,6 @@
                 <ul>
                     <li><a href="/">home</a></li>
                     <li><a href="/doctor">doctors</a></li>
-                    <li><a href="/room">rooms</a></li>
                     <li><a href="/help">helps</a></li>
                     <%--<li>--%>
                         <%--<span class="opener">Submenu</span>--%>

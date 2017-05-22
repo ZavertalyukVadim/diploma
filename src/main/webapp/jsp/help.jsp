@@ -28,6 +28,14 @@
                     <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
                 </ul>
             </header>
+            <section id="search" class="alt">
+                <header class="main">
+                    <h1>Enter your symptoms</h1>
+                </header>
+                <form method="post" action="/search">
+                    <input type="text" name="query" id="query" placeholder="Search"/>
+                </form>
+            </section>
 
             <section>
                 <header class="main">
@@ -67,11 +75,7 @@
                 <%--</form>--%>
             </section>
 
-            <section id="search" class="alt">
-                <form method="post" action="/search">
-                    <input type="text" name="query" id="query" placeholder="Search"/>
-                </form>
-            </section>
+
 
         </div>
     </div>
