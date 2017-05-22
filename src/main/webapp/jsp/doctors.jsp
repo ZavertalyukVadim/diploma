@@ -29,9 +29,21 @@
                 <header class="main">
                     <h1>Doctors</h1>
                 </header>
+
+                <p>${doctor.lastName}</p>
+
+                <header class="main">
+                    <h1>Doctors</h1>
+                </header>
                 <c:forEach items="${doctors}" var="doctor">
-                    <p>${doctor.lastName}</p>
+                    <p>First Name: ${doctor.firstName}<br></p>
+                    <p>Last Name: ${doctor.lastName}<br></p>
+                    <c:forEach items="${doctor.groupsOfDiseases}" var="groupsOfDisease">
+                        <p>Groups Of Disease: ${groupsOfDisease.name}<br></p>
+                    </c:forEach>
+                    <p>Room number: ${doctor.room.number}<br></p>
                 </c:forEach>
+                <hr class="major" />
             </section>
         </div>
     </div>
@@ -52,7 +64,6 @@
                 <ul>
                     <li><a href="/">home</a></li>
                     <li><a href="/doctor">doctors</a></li>
-                    <li><a href="/room">rooms</a></li>
                     <li><a href="/help">helps</a></li>
                 </ul>
             </nav>
@@ -82,7 +93,8 @@
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../resources/assets/js/ie/respond.min.js"></script>
+<![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 </body>
 </html>
