@@ -43,6 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/registration").permitAll()
+//                .antMatchers("/").permitAll()
                 .antMatchers("/**").authenticated()
                 .and().formLogin().loginPage("/login")
                 .and().csrf().disable()
