@@ -18,8 +18,12 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "users", cascade = CascadeType.ALL)
-    private List<GroupOfDiseases> groupsOfDiseases;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "diseases_users", joinColumns = {
+            @JoinColumn(name = "diseases_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "user_id",
+                    nullable = false)})
+    private List<Disease> diseases;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Rent> rents;
@@ -67,12 +71,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public List<GroupOfDiseases> getGroupsOfDiseases() {
-        return groupsOfDiseases;
+    public List<Disease> getDiseases() {
+        return diseases;
     }
 
-    public void setGroupsOfDiseases(List<GroupOfDiseases> groupsOfDiseases) {
-        this.groupsOfDiseases = groupsOfDiseases;
+    public void setDiseases(List<Disease> diseases) {
+        this.diseases = diseases;
     }
 
     public List<Rent> getRents() {

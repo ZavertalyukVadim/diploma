@@ -13,13 +13,6 @@ public class GroupOfDiseases {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "groups_of_diseases_users", joinColumns = {
-            @JoinColumn(name = "groups_of_diseases_id", nullable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "user_id",
-                    nullable = false)})
-    private List<User> users;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
@@ -51,13 +44,6 @@ public class GroupOfDiseases {
         this.diseases = diseases;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
     public Doctor getDoctor() {
         return doctor;
