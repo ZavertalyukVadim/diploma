@@ -21,7 +21,8 @@
                     </c:if>
                     <c:if test="${!role}">
                         <li><a href="/login" class="icon fa-facebook"><span class="label">Sing in</span></a></li>
-                        <li><a href="/registration" class="icon fa-snapchat-ghost"><span class="label">Sing up</span></a></li>
+                        <li><a href="/registration" class="icon fa-snapchat-ghost"><span
+                                class="label">Sing up</span></a></li>
 
                     </c:if>
                 </ul>
@@ -29,9 +30,35 @@
 
             <section>
                 <header class="main">
-                    <h1>Users</h1>
+                    <h1>User</h1>
                 </header>
-                    <p>${user.firstName}</p>
+                <p>First Name: ${user.firstName}<br></p>
+                <p>Last Name: ${user.lastName}<br></p>
+                <p>Username: ${user.username}</p>
+                <c:forEach items="${user.diseases}" var="disease">
+                    <p>Diseases: ${disease.name}<br></p>
+                </c:forEach>
+                <h4>Rents</h4>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Pacient</th>
+                            <th>Doctor</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${user.rents}" var="rent">
+                            <tr>
+                                <td>${rent.date}</td>
+                                <td>${rent.user.lastName}</td>
+                                <td>${rent.doctor.firstName}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </div>
@@ -80,7 +107,8 @@
 <script src="<c:url value="../resources/assets/js/jquery.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/skel.min.js"/>"></script>
 <script src="<c:url value="../resources/assets/js/util.js"/>"></script>
-<script src="../resources/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="../resources/assets/js/ie/respond.min.js"></script>
+<![endif]-->
 <script src="<c:url value="../resources/assets/js/main.js"/>"></script>
 </body>
 </html>

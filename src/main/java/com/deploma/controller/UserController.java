@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Objects;
@@ -22,23 +21,23 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
-    public String getAllUsers(ModelMap modelMap) {
-        Boolean role;
-        Object auth = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        role = !Objects.equals(auth.toString(), "anonymousUser");
-        modelMap.addAttribute("role", role);
-        modelMap.addAttribute("users", userService.getAllUsers());
-        return "users";
-    }
+//    @GetMapping
+//    public String getAllUsers(ModelMap modelMap) {
+//        Boolean role;
+//        Object auth = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        role = !Objects.equals(auth.toString(), "anonymousUser");
+//        modelMap.addAttribute("role", role);
+//        modelMap.addAttribute("users", userService.getAllUsers());
+//        return "users";
+//    }
 
-    @GetMapping(value = "/{id}")
-    String getUser(@PathVariable(value = "id") Integer id, ModelMap modelMap){
+    @GetMapping()
+    String getUser(ModelMap modelMap){
         Boolean role;
         Object auth = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         role = !Objects.equals(auth.toString(), "anonymousUser");
         modelMap.addAttribute("role", role);
-        modelMap.addAttribute("user", userService.getUser(id));
+        modelMap.addAttribute("user", userService.getUserByUsername(getPrincipal()));
         return "user";
     }
     private String getPrincipal() {
