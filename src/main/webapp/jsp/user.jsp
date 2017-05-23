@@ -44,6 +44,7 @@
                         <thead>
                         <tr>
                             <th>Date</th>
+                            <th>Room</th>
                             <th>Pacient</th>
                             <th>Doctor</th>
                         </tr>
@@ -52,6 +53,7 @@
                         <c:forEach items="${user.rents}" var="rent">
                             <tr>
                                 <td>${rent.date}</td>
+                                <td>${rent.doctor.room.number}</td>
                                 <td>${rent.user.lastName}</td>
                                 <td>${rent.doctor.firstName}</td>
                             </tr>
